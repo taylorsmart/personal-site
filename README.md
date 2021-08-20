@@ -1,1 +1,5 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+Personal Site for Taylor Smart
+
+Next.js
+Deployed on Vercel
+CSS package tailwind: https://tailwindcss.com/docs

@@ -1,0 +1,59 @@
+import NavBar from './nav-bar'
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
+import ArticleSubHeading from './atoms/article-sub-heading'
+import {useRouter} from 'next/router'
+import ChevronDoubleUp from '../public/assets/images/chevron-double-up.svg'
+
+export default function ArticleView ({children, frontMatter}) {
+  const router = useRouter()
+
+  return (
+    <>
+     <Head>
+        <title> {frontMatter.title} </title>
+      </Head>
+      <main>
+        <NavBar/>
+      </main>
+      <div  className="flex items-center justify-center">
+        <article className="prose m-6">
+          <div className="text-center">
+            <Link
+            href={`/newsLetter?newsType=${router.query.newsType}`}
+            key="back"
+            >
+              <Image
+                src={ChevronDoubleUp}
+                height={29}
+                width={29}
+                alt="back"></Image>
+            </Link>
+          </div>
+          <h1 >{frontMatter.title}</h1>
+        </article>
+      </div>
+      <div className="grid pl-6 border-b-4 border-double border-gray-300 pb-4 justify-center text-center md:justify-start md:text-left md:grid-cols-7 md:border-none md:pb-0 md:mb-0">
+        <div className="md:col-start-3 md:col-span-3 md:border-b-4 md:border-double md:border-gray-300 md:pb-4 md:mb-6">
+          <ArticleSubHeading />
+        </div>
+      </div>
+      {/* <div className="grid pl-6 border-b-4 border-double border-gray-300 pb-4 justify-center text-center md:justify-start md:text-left md:grid-cols-7 md:border-none md:pb-0 md:mb-0">
+        <div className="md:col-start-3 ">
+          <Link
+          href={`/newsLetter?newsType=${router.query.newsType}`}
+          key="back"
+          >
+            <button>...back</button>
+          </Link>
+        </div>
+      </div> */}
+      <div  className="flex items-center justify-center pt-4 md:pt-0">
+        {children}
+      </div>
+    </>
+  )
+}
+
+

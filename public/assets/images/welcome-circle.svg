@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="210mm"
+   viewBox="0 0 210 210"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)"
+   sodipodi:docname="welcome-circle.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient989">
+      <stop
+         style="stop-color:#f1faee;stop-opacity:1;"
+         offset="0"
+         id="stop985" />
+      <stop
+         style="stop-color:#f1faee;stop-opacity:0;"
+         offset="1"
+         id="stop987" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient945"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#563635;stop-opacity:1;"
+         offset="0"
+         id="stop943" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient989"
+       id="radialGradient995"
+       cx="88.068459"
+       cy="86.556549"
+       fx="88.068459"
+       fy="86.556549"
+       r="53.354168"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.3187929,0,0,1.3187929,-10.920841,-17.474636)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.55584063"
+     inkscape:cx="630.65991"
+     inkscape:cy="406.59138"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1035"
+     inkscape:window-x="0"
+     inkscape:window-y="63"
+     inkscape:window-maximized="0"
+     height="210mm" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Background"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="opacity:1">
+    <ellipse
+       style="fill:#afa98d;stroke-width:0.264583"
+       id="path842"
+       cx="145.06548"
+       cy="157.15172"
+       rx="34.773811"
+       ry="30.994047" />
+    <ellipse
+       style="fill:#afa98d;stroke-width:0.264583"
+       id="path847"
+       cx="91.014885"
+       cy="79.28862"
+       rx="5.6696429"
+       ry="5.2916665" />
+    <ellipse
+       style="fill:#563635;stroke-width:0.264583"
+       id="path849"
+       cx="158.67262"
+       cy="88.360046"
+       rx="14.363094"
+       ry="12.095239" />
+    <ellipse
+       style="fill:#0f7173;stroke-width:0.264583"
+       id="path851"
+       cx="82.321426"
+       cy="119.73206"
+       rx="8.3154764"
+       ry="7.1815472" />
+    <ellipse
+       style="fill:#afa98d;stroke-width:0.264583"
+       id="ellipse921"
+       cx="145.06548"
+       cy="157.15172"
+       rx="34.773811"
+       ry="30.994047" />
+    <circle
+       style="fill:#563635;stroke-width:0.232173"
+       id="path10"
+       cx="105.22321"
+       cy="101.05646"
+       r="87.75" />
+    <ellipse
+       style="fill:#0f7173;stroke-width:0.264583"
+       id="path857"
+       cx="34.69643"
+       cy="44.514809"
+       rx="18.142857"
+       ry="17.386906" />
+    <ellipse
+       style="fill:#563635;stroke-width:0.264583"
+       id="path849-5"
+       cx="39.988094"
+       cy="185.12195"
+       rx="14.363094"
+       ry="12.095239" />
+    <ellipse
+       style="fill:#0f7173;stroke-width:0.264583"
+       id="path851-5"
+       cx="185.13095"
+       cy="47.53862"
+       rx="8.3154764"
+       ry="7.1815472" />
+    <ellipse
+       style="fill:#563635;stroke-width:0.288323"
+       id="path849-8"
+       cx="179.08333"
+       cy="173.02673"
+       rx="14.363094"
+       ry="14.363096" />
+    <circle
+       style="fill:url(#radialGradient995);fill-opacity:1;stroke-width:0.18617"
+       id="path10-8"
+       cx="105.22321"
+       cy="96.675529"
+       r="70.363098" />
+    <text
+       xml:space="preserve"
+       style="font-size:38.7253px;line-height:1.25;font-family:sans-serif;fill:#f1faee;stroke-width:0.264583"
+       id="text16"
+       transform="matrix(0.86120679,0,0,0.86120679,11.117577,16.678922)"><textPath
+         xlink:href="#path10-8"
+         id="textPath3033">Let's build something.</textPath></text>
+  </g>
+</svg>
