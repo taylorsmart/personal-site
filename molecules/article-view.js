@@ -49,7 +49,7 @@ export default function ArticleView ({children, frontMatter}) {
           </Link>
         </div>
       </div> */}
-      <div  className="flex items-center justify-center pt-4 md:pt-0">
+      <div  className="md:flex md:items-center md:justify-center pt-4 md:pt-0 max-w-screen">
         {children}
       </div>
     </>
