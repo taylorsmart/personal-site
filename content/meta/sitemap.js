@@ -8,17 +8,17 @@ import content from './about-me/about-me-content'
 
 
 const sitemap = [
-  {
-    'page':'About',
-    'key':1,
-    'primaryLink':'/about',
-    'subLinks':[],
-    'keyArticles': []
-  },
+  // {
+  //   'page':'About',
+  //   'key':1,
+  //   'primaryLink':'/about',
+  //   'subLinks':[],
+  //   'keyArticles': []
+  // },
   {
     'page':'Engineering',
     'key':3,
-    'primaryLink':'/engineering/home',
+    'primaryLink':'/newsletter?newsType=eng',
     'subLinks':
       [
         {
@@ -27,23 +27,23 @@ const sitemap = [
           href: '/newsLetter?newsType=eng',
           icon: PencilIcon,
         },
-        {
-          name: 'Projects',
-          description: 'A handful of projects I\'ve worked on.',
-          href: '#',
-          icon: SupportIcon,
-        },
+        // {
+        //   name: 'Projects',
+        //   description: 'A handful of projects I\'ve worked on.',
+        //   href: '#',
+        //   icon: SupportIcon,
+        // },
       ],
     'keyArticles': [
-      { id: 'eng-1', name: 'Using MongoDB efficiently', href: '#' },
-      { id: 'eng-2', name: 'Integrating Next.js with tailwind css', href: '#' },
-      { id: 'eng-3', name: 'My lessons teaching JavaScript', href: '#' },
+      { id: 'eng-1', name: 'Using MongoDB efficiently', href: '/engineering/eng1' },
+      { id: 'eng-2', name: 'Integrating Next.js with tailwind css', href: '/engineering/eng2' },
+      { id: 'eng-3', name: 'My lessons teaching JavaScript', href: '/engineering/eng3' },
     ]
   },
   {
     'page':'Product',
     'key':2,
-    'primaryLink':'/product/home',
+    'primaryLink':'/newsletter?newsType=prd',
     'subLinks':
       [
         {
@@ -54,9 +54,9 @@ const sitemap = [
         },
     ],
     'keyArticles': [
-      { id: 'prd1', name: 'Boost your conversion rate', href: '/product?id=prd-1' },
-      { id: 'prd-2', name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
-      { id: 'prd-3', name: 'Improve your customer experience', href: '#' },
+      { id: 'prd1', name: 'Boost your conversion rate', href: '/product/prd1' },
+      { id: 'prd-2', name: 'How to use search engine optimization to drive traffic to your site', href: '/product/prd2' },
+      { id: 'prd-3', name: 'Improve your customer experience', href: '/product/prd3' },
     ]
   },
   {

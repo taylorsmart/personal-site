@@ -88,13 +88,13 @@ function NavBar () {
       </Popover>
 
 {/* Mobile View Menu*/}
-      <Popover className="absolute bg-gray-100 flex-col justify-between items-center border-b-2 border-gray-50 w-full">
+      <Popover className="relative bg-gray-100 flex-col justify-between items-center border-b-2 border-gray-50 w-full">
           <div
             className={`${
               active ? '' : 'hidden'
             }   md:hidden`}
           >
-            <div className="flex flex-col justify-center items-center border-b-2 border-gray-200 underline uppercase ">
+            <div className="flex flex-col justify-center items-center border-b-2 border-gray-200  underline uppercase">
               {sitemap.map((linkObj) => (<NavButton page={linkObj.page} primaryLink={linkObj.primaryLink} subLinks={[]} keyArticles={[]} key={linkObj.key} />))}
             </div>
           </div>

@@ -177,27 +177,27 @@ const content = {
   'projectList':[
     {
       'key':'pj-1',
-      'name':'Name of Project',
-      'link':'link to project',
-      'image':'/assets/images/TS.svg',
+      'name':'Personal Site',
+      'link':'https://github.com/taylorsmart/personal-site',
+      'image':'/assets/images/personal-site-image.svg',
       'penLink':null,
-      'shortDesc':'this is a short description'
+      'shortDesc':'This site uses Javascript, Next.js, and tailwindcss. It required a deep understanding of both the tailwind framework & the rendering procedure for Next.js in order to construct it appropriately. '
     },
     {
       'key':'pj-2',
-      'name':'Name of Project2',
-      'link':'link to project2',
-      'image':'/assets/images/TS.svg',
+      'name':'E-Commerce Backend',
+      'link':'https://github.com/SDC-Team-Snowed-In/project-catwalk',
+      'image':'/assets/images/next-level-backend.svg',
       'penLink':null,
-      'shortDesc':'this is a short description'
+      'shortDesc':'Developing the backend for the Next-Level Ecommerce showcases my abilities with Node.js, PostgreSQL, and Express.  The frontend for this site was legacy code and we were tasked with meeting challenging user demands for speed and api efficiency.'
     },
     {
       'key':'pj-3',
-      'name':'Name of Project3',
-      'link':'link to project3',
-      'image':'/assets/images/TS.svg',
+      'name':'nVision Nutrition',
+      'link':'https://github.com/Nvision-Nutrition/nvision',
+      'image':'/assets/images/nvision.svg',
       'penLink':null,
-      'shortDesc':'this is a short description'
+      'shortDesc':'This fullstack, mobile-first, application was developed using React, Next.js, and Bootstrap.  I worked with a team of developers to create an application for our clients daughter to help her better track her caloric intake in a childishly fun & appealing way.'
     }
   ]
 }
