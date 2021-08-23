@@ -25,7 +25,6 @@ function NavButton ({page, primaryLink, subLinks, keyArticles}) {
 
   // const handleRouter = (e) => {
   //   // e.preventDefault()
-  //   console.log(e)
   //   // router.push(e)
   // }
 

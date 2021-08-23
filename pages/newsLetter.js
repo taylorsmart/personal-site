@@ -26,7 +26,6 @@ export default function ArticleContainer({ posts }) {
       setter= !setter
     }
   }
-  console.log('style array in newsLetter: ', styleArray)
 
   return (
     <>
