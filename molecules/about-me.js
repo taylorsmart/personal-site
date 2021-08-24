@@ -12,23 +12,9 @@ export default function AboutMe () {
 
   return (
     <>
-      <div  className="flex-grow md:grid  md:grid-cols-2 w-screen justify-between">
-        <div className="flex items-center text-left align-middle border-r-2 border-gray-200 p-4">
-          <div>
-            <article className="prose prose-sm">
-              <ShortBio/>
-            </article>
-            <Link
-              href="test"
-              >
-              <button className="prose bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                Book a Meeting
-              </button>
-            </Link>
-          </div>
-        </div>
-        <div className="hidden md:flex align-middle justify-center p-4">
-          <Image 
+      <div  className="flex-grow md:grid  md:grid-cols-1 w-screen justify-between text-center align-middle item-center">
+      <div className="hidden md:flex align-middle justify-center p-4">
+          <Image
             alt='Photo of Taylor'
             src={avatar}
             className="h-8 w-auto sm:h-10"
@@ -36,6 +22,23 @@ export default function AboutMe () {
             height={180}
           ></Image>
         </div>
+        <div className="flex items-center justify-center align-middle border-r-2 border-gray-200 p-4">
+
+          <div className="text-left">
+            <article className="prose prose-sm">
+              <ShortBio/>
+            </article>
+          </div>
+        </div>
+        <div className="justify-center">
+          <Link
+              href="test"
+              >
+              <button className="prose bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                Book a Meeting
+              </button>
+            </Link>
+          </div>
       </div>
     </>
   )

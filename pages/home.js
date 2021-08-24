@@ -10,18 +10,18 @@ export default function HomeMain() {
 
   return (
     <>
-      <div className='text-left border-b-4 border-double border-gray-500 pt-4'>
+      {/* <div className='text-left border-b-4 border-double border-gray-500 pt-4'>
         <article className="prose">
           <h1>About Me</h1>
         </article>
-      </div>
-      <div className="flex max-width-full md:h-screen border-b-2 border-rounded border-gray-200">
+      </div> */}
+      <div className="flex max-width-full  ">
         <AboutMe/>
       </div>
       <div className='text-left border-b-4 border-double border-gray-500 pt-4'>
-        <article className="prose">
+        {/* <article className="prose">
           <h1>Experience</h1>
-        </article>
+        </article> */}
       </div>
       <div className="flex max-width-full  border-b-2 border-rounded border-gray-200">
         <Experience/>

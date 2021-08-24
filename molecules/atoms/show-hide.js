@@ -23,6 +23,7 @@ export default function ScrollSlideUp(props) {
     <div ref={el}>
       <Transition
         show={show}
+        appear={true}
         enter={transition.enter}
         enterFrom={transition.enterFrom}
         enterTo={transition.enterTo}

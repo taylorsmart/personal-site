@@ -35,7 +35,7 @@ export default function ArticleContainer({ posts }) {
       <main>
         <NavBar/>
       </main>
-      <div className="max-w-screen grid sm:grid-cols-1 md:grid-cols-5 md:m-8 text-center m-4 justify-between gap-1">
+      <div className="max-w-screen grid grid-cols-1 md:grid-cols-5 md:m-8 text-center m-4 justify-between gap-1">
         {posts.map((frontMatter, index) => <ArticleCard key={frontMatter.title} {...frontMatter} newsType={router.query.newsType} styleArray={styleArray} index={index} />)}
       </div>
     </>

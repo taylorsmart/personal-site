@@ -18,7 +18,7 @@ const sitemap = [
   {
     'page':'Engineering',
     'key':3,
-    'primaryLink':'/newsletter?newsType=eng',
+    'primaryLink':'/newsLetter?newsType=eng',
     'subLinks':
       [
         {
@@ -35,15 +35,15 @@ const sitemap = [
         // },
       ],
     'keyArticles': [
-      { id: 'eng-1', name: 'Using MongoDB efficiently', href: '/engineering/eng1' },
-      { id: 'eng-2', name: 'Integrating Next.js with tailwind css', href: '/engineering/eng2' },
-      { id: 'eng-3', name: 'My lessons teaching JavaScript', href: '/engineering/eng3' },
+      { id: 'eng-1', name: 'Using MongoDB efficiently', href: '/newsLetter/engineering/eng1?newsType=eng' },
+      { id: 'eng-2', name: 'Integrating Next.js with tailwind css', href: '/newsLetter/engineering/eng2?newsType=eng' },
+      { id: 'eng-3', name: 'My lessons teaching JavaScript', href: '/newsLetter/engineering/eng3?newsType=eng' },
     ]
   },
   {
     'page':'Product',
     'key':2,
-    'primaryLink':'/newsletter?newsType=prd',
+    'primaryLink':'/newsLetter?newsType=prd',
     'subLinks':
       [
         {
@@ -54,9 +54,9 @@ const sitemap = [
         },
     ],
     'keyArticles': [
-      { id: 'prd1', name: 'Boost your conversion rate', href: '/product/prd1' },
-      { id: 'prd-2', name: 'How to use search engine optimization to drive traffic to your site', href: '/product/prd2' },
-      { id: 'prd-3', name: 'Improve your customer experience', href: '/product/prd3' },
+      { id: 'prd1', name: 'Boost your conversion rate', href: '/newsLetter/product/prd1?newsType=prd' },
+      { id: 'prd-2', name: 'How to use search engine optimization to drive traffic to your site', href: '/newsLetter/product/prd2?newsType=prd' },
+      { id: 'prd-3', name: 'Improve your customer experience', href: '/newsLetter/product/prd3?newsType=prd' },
     ]
   },
   {
@@ -64,16 +64,16 @@ const sitemap = [
     'key':4,
     'primaryLink':content.links.calendly,
     'subLinks': [
-      {
-        name: 'Email',
-        description: 'Send me an email.',
-        href: '#',
-        icon: MailIcon,
-      },
+      // {
+      //   name: 'Email',
+      //   description: 'Send me an email.',
+      //   href: '#',
+      //   icon: MailIcon,
+      // },
       {
         name: 'Book a Meeting',
         description: 'Schedule a meeting to chat with me directly.',
-        href: '#',
+        href: 'https://calendly.com/taylorsmart/30-minute-chat',
         icon: CalendarIcon,
       },
     ],

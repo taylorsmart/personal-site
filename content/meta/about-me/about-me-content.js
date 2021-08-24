@@ -33,21 +33,21 @@ import {
 } from '../../../public/assets/logos';
 import {
   MailIcon,
-  CalendarIcon,
 } from '@heroicons/react/outline'
+import calendarIcon from '../../../public/assets/images/calendarIcon.svg'
 
 const content = {
   'name':'Taylor Smart',
   'avatar':'/assets/images/profileImage.svg',
   'links':{
-    'linkedin':'linkedin link',
+    'linkedin':'https://www.linkedin.com/in/taylor-smart/',
     'linkedinIcon':linkedin,
-    'github':'github link',
+    'github':'https://github.com/taylorsmart',
     'githubIcon':githublogo,
-    'twitter':'twitter link',
+    'twitter':'https://twitter.com/Taylor__Smart',
     'twitterIcon':twitter,
-    'calendly':'/calendly',
-    'calendlyIcon':twitter
+    'calendly':'https://calendly.com/taylorsmart/30-minute-chat',
+    'calendlyIcon':calendarIcon
   },
   skills:[
     {

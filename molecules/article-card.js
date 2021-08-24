@@ -15,15 +15,15 @@ const ArticleCard = ({title, summary, slug, imageLink, newsType, styleArray, ind
     gridSet = styleArray[index][1] //this yields the true/false on setting
     if(gridStyle) {
       if(gridSet) { //if true = larger
-        style = classNames('col-span-3 ', style) //true:true
+        style = classNames('md:col-span-3 ', style) //true:true
       } else {
-        style = classNames('col-span-2 ', style) //true:false
+        style = classNames('md:col-span-2 ', style) //true:false
       }
     } else {
       if(gridSet) { //if true = true = smaller for second
-        style = classNames('col-span-3 ', style) //false:true
+        style = classNames('md:col-span-3 ', style) //false:true
       } else {
-        style = classNames('col-span-2 ', style) //false:false
+        style = classNames('md:col-span-2 ', style) //false:false
       }
     }
   }
