@@ -8,7 +8,7 @@ export default function AboutMe () {
   let name = content.name;
   let longBio = content.longBio;
   let avatar = content.avatar;
-  let calendly = content.links;
+  let calendly = content.links.calendly;
 
   return (
     <>
@@ -32,7 +32,7 @@ export default function AboutMe () {
         </div>
         <div className="justify-center">
           <Link
-              href="test"
+              href={calendly}
               >
               <button className="prose bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                 Book a Meeting
