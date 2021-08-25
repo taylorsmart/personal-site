@@ -62,6 +62,7 @@ function NavBar () {
         <button
           className='inline-flex  rounded md:hidden lg:hidden text-white hover:text-white outline-none'
           onClick={handleClick}
+          aria-label="Menu Items"
         >
           <svg
             className='w-6 h-6'
