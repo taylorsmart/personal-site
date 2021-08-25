@@ -8,7 +8,6 @@ import ChevronDoubleUp from '../public/assets/images/chevron-double-up.svg'
 
 export default function ArticleView ({children, frontMatter}) {
   const router = useRouter()
-  console.log(frontMatter.slug)
   let newsType = router.query.newsType
   if(frontMatter){
       newsType = frontMatter.slug.includes("eng") ? 'eng' : 'prd'
@@ -27,9 +26,8 @@ export default function ArticleView ({children, frontMatter}) {
       <div  className="flex items-center justify-center">
         <article className="prose m-6">
           <div className="text-center">
-            <Link
+            <a
             href={`/newsLetter?newsType=${newsType}`}
-            key="back"
             >
               <Image
                 src={ChevronDoubleUp}
@@ -37,7 +35,7 @@ export default function ArticleView ({children, frontMatter}) {
                 height={29}
                 width={29}
                 alt="back"></Image>
-            </Link>
+            </a>
           </div>
           <h1 >{frontMatter.title}</h1>
         </article>

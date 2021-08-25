@@ -6,8 +6,7 @@ export default function LogoList () {
   return(
     <>
       <div className="p-1 md:p-0 h-29 w-29">
-      <Link
-        key="twitterLink"
+      <a
         href={content.links.twitter}
         >
         <Image
@@ -17,11 +16,10 @@ export default function LogoList () {
           height={29}
           width={29}
           ></Image>
-      </Link>
+      </a>
     </div>
     <div className="p-1 md:p-0 h-29 w-29">
-      <Link
-        key="linkedinLink"
+      <a
         href={content.links.linkedin}
         >
         <Image
@@ -31,11 +29,10 @@ export default function LogoList () {
           height={29}
           width={29}
           ></Image>
-      </Link>
+      </a>
     </div>
     <div className="p-1 md:p-0 h-29 w-29">
-      <Link
-        key="githubLink"
+      <a
         href={content.links.github}
         >
         <Image
@@ -45,11 +42,10 @@ export default function LogoList () {
           height={29}
           width={29}
           ></Image>
-      </Link>
+      </a>
     </div>
     <div className="p-1 md:p-0 h-29 w-29">
-      <Link
-        key="calendlyLink"
+      <a
         href={content.links.calendly}
         >
         <Image
@@ -59,7 +55,7 @@ export default function LogoList () {
           height={29}
           width={29}
           ></Image>
-      </Link>
+      </a>
     </div>
   </>
   )
