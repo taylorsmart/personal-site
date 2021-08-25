@@ -21,7 +21,7 @@ export default function ScrollSlideUp(props) {
 
   return (
     <div ref={el}>
-      <Transition
+      {/* <Transition
         show={show}
         appear={true}
         enter={transition.enter}
@@ -30,9 +30,9 @@ export default function ScrollSlideUp(props) {
         leave={transition.leave}
         leaveFrom={transition.leaveFrom}
         leaveTo={transition.leaveTo}
-      >
+      > */}
         <Component {...props}/>
-      </Transition>
+      {/* </Transition> */}
     </div>
   );
 }

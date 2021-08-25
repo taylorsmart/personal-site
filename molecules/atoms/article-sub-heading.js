@@ -16,7 +16,6 @@ import content from '../../content/meta/about-me/about-me-content'
 import LogoList from './logo-list'
 const ArticleSubHeading = ({timeToRead}) => {
 
-  timeToRead = 3;
   return (
     <>
       <div className="flex-grow grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
@@ -36,7 +35,7 @@ const ArticleSubHeading = ({timeToRead}) => {
               {/* <button className=" border border-gray-900 text-blue-600 hover:bg-gray-900 hover:text-blue-100  px-2 py-2 rounded-full mr-2">Subscribe</button> */}
             </div>
             <div>
-              {`${timeToRead} min read`}
+              {`${timeToRead.text}`}
             </div>
           </div>
         </div>

@@ -44,7 +44,7 @@ export default function ArticleView ({children, frontMatter}) {
       </div>
       <div className="grid pl-6 border-b-4 border-double border-gray-300 pb-4 justify-center text-center md:justify-start md:text-left md:grid-cols-7 md:border-none md:pb-0 md:mb-0">
         <div className="md:col-start-3 md:col-span-3 md:border-b-4 md:border-double md:border-gray-300 md:pb-4 md:mb-6">
-          <ArticleSubHeading />
+          <ArticleSubHeading timeToRead={frontMatter.readingTime}/>
         </div>
       </div>
       {/* <div className="grid pl-6 border-b-4 border-double border-gray-300 pb-4 justify-center text-center md:justify-start md:text-left md:grid-cols-7 md:border-none md:pb-0 md:mb-0">
