@@ -1,7 +1,9 @@
+import loadable from '@loadable/component'
+const ExperienceColumn = loadable(() => import('../molecules/atoms/experience-column'))
+const ShowHide = loadable(() => import('../molecules/atoms/show-hide'))
+
 import content from '../content/meta/about-me/about-me-content'
-import ShowHide from '../molecules/atoms/show-hide'
 import { slideUp, appear } from '../content/meta/transitions'
-import ExperienceColumn from './atoms/experience-column';
 import { useEffect } from 'react';
 
 export default function Experience () {

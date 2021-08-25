@@ -1,8 +1,10 @@
-import Spinner from '../molecules/atoms/spinner'
-import AboutMe from '../molecules/about-me'
-import Experience from '../molecules/experience'
-import ProjectBox from '../molecules/project-box'
-import ShowHide from '../molecules/atoms/show-hide'
+import loadable from '@loadable/component'
+const Spinner = loadable(() => import('../molecules/atoms/spinner'))
+const AboutMe = loadable(() => import('../molecules/about-me'))
+const Experience = loadable(() => import('../molecules/experience'))
+const ProjectBox = loadable(() => import('../molecules/project-box'))
+const ShowHide = loadable(() => import('../molecules/atoms/show-hide'))
+
 import { slideUp, appear, slideRight } from '../content/meta/transitions'
 
 

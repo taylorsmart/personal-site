@@ -2,7 +2,8 @@ import NavBar from './nav-bar'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import ArticleSubHeading from './atoms/article-sub-heading'
+import loadable from '@loadable/component'
+const ArticleSubHeading = loadable(() => import('../molecules/atoms/article-sub-heading'))
 import {useRouter} from 'next/router'
 import ChevronDoubleUp from '../public/assets/images/chevron-double-up.svg'
 

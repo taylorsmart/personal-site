@@ -22,10 +22,13 @@
  *   Renders dynamically for mobile
  *
  */
+
+ import loadable from '@loadable/component'
+ const NavButton = loadable(() => import('../molecules/atoms/nav-button'))
+
+import sitemap from '../content/meta/sitemap'
 import Image from 'next/image'
 import { Popover } from '@headlessui/react'
-import NavButton from './atoms/nav-button'
-import sitemap from '../content/meta/sitemap'
 import { useState } from 'react';
 
 function NavBar () {

@@ -1,9 +1,12 @@
-import ProjectCard from './atoms/project-card'
+
+ import loadable from '@loadable/component'
+ const ProjectCard = loadable(() => import('./atoms/project-card'))
+ const ShowHide = loadable(() => import('../molecules/atoms/show-hide'))
+ const MethodologyText = loadable(() => import('../molecules/atoms/methodology'))
+ const Spinner = loadable(() => import('./atoms/spinner'))
+
 import content from '../content/meta/about-me/about-me-content'
-import ShowHide from '../molecules/atoms/show-hide'
 import { slideUp, appear, slideRight } from '../content/meta/transitions'
-import MethodologyText from './atoms/methodology';
-import Spinner from './atoms/spinner';
 
 
 export default function ProjectBox({md}) {
