@@ -31,7 +31,8 @@ return (
       </div> : null }
       <div className="flex-grow">
         <div className="grid sm:grid-cols-1 sm:m-3 md:grid-cols-3 md:gap-4">
-          {projectList.map((project) => <ShowHide Component={ProjectCard} perc={1} transition={slideUp} project={project} key={project.key}/>)}
+          {/* {projectList.map((project) => <ShowHide Component={ProjectCard} perc={1} transition={slideUp} project={project} key={project.key}/>)} */}
+          {projectList.map((project) => <ProjectCard project={project} key={project.key}/>)}
         </div>
       </div>
     </>
