@@ -4,7 +4,7 @@ export default function Experience ({skillName, skillList}) {
 
   return (
     <>
-        <div className="p-4  md:border-r-2 md:border-gray-200">
+        <div className="p-4  md:border-r-2 md:border-l-2 md:border-gray-200">
           <article className="prose-sm">
             <h1 className="justify-center text-center uppercase font-bold border-b-2 border-color-gray-200">
               {skillName}

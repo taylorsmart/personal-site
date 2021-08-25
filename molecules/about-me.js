@@ -22,7 +22,7 @@ export default function AboutMe () {
             height={180}
           ></Image>
         </div>
-        <div className="flex items-center justify-center align-middle border-r-2 border-gray-200 p-4">
+        <div className="flex items-center justify-center  p-4">
 
           <div className="text-left">
             <article className="prose prose-sm">
