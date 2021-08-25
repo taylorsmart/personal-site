@@ -1,11 +1,13 @@
+
+import loadable from '@loadable/component'
+const ArticleSubHeading = loadable(() => import('../molecules/atoms/article-sub-heading'))
+
+import {useRouter} from 'next/router'
+import ChevronDoubleUp from '../public/assets/images/chevron-double-up.svg'
 import NavBar from './nav-bar'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import loadable from '@loadable/component'
-const ArticleSubHeading = loadable(() => import('../molecules/atoms/article-sub-heading'))
-import {useRouter} from 'next/router'
-import ChevronDoubleUp from '../public/assets/images/chevron-double-up.svg'
 
 export default function ArticleView ({children, frontMatter}) {
   const router = useRouter()
