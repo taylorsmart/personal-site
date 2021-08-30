@@ -1,9 +1,9 @@
 ---
 title: 'Paint by Render'
 summary: 'An analogy of painting to describe various server side and client side rendering advantages'
-excerpt: ''
+excerpt: 'When I think of rendering a webpage I liken it to creating a piece of art.'
 imageLink: '/assets/images/profileImage.svg'
-keyWords:
+keyWords: server side rendering, ssr, client side rendering, csr, nextjs
 ---
 ### The Analogy
 When I think of rendering a webpage I liken it to creating a piece of art.  By happenstance, many of the metrics used to analyze the optimization of various websites happen to fit in nicely with this analogy.  Metrics like, First Paint, First Contentful Paint, First Meaningful Paint - all of those are measuring in various ways the speed at which your site and content load onto the page.
@@ -31,7 +31,7 @@ This significantly improved the responsiveness of websites, enhancing the overal
 
 In line with the analogy, commission requests were sent to the server and the server responded with a set of instructions (written in Javascript) for the painter to paint upon the DOM.  The painter then executes all of the instructions and dynamically paints the DOM with all of the components necessary to fully construct your website.
 
-The downside to this is on the search engine side.  Search engines will look at your HTML file and derive the content of your side from that html - with client side rendering, you often will have an HTML file with only one <div> in in - entrusting the browser to dynamically inject the content off of that single div.  Search engines have been improving on this front - which we will discuss in another article.
+The downside to this is on the search engine side.  Search engines will look at your HTML file and derive the content of your side from that html - with client side rendering, you often will have an HTML file with only one div in in - entrusting the browser to dynamically inject the content off of that single div.  Search engines have been improving on this front - which we will discuss in another article.
 
 
 
