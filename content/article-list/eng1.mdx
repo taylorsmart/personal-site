@@ -3,10 +3,11 @@ title: 'Aysnchronous Behavior in Javascript'
 summary: 'Analogy: The Javascript engine as a restaurant. A beginners primer on asynchronous behavior wihthin Javascript'
 excerpt: 'Imagine Javascript is a restaurant with a kitchen, a waiter, and an individual named Frank  eating a large quantity of pancakes.'
 imageLink: '/assets/images/profileImage.svg'
-keyWords: test
+keyWords: event loop, callback queue, single-threaded, setTimeout, call stack, web api, javascript
+references: https://dev.to/steelvoltage/if-javascript-is-single-threaded-how-is-it-asynchronous-56gd, http://latentflip.com/, https://www.educative.io/edpresso/what-is-an-event-loop-in-javascript
 ---
 
-# How does Javascript code execute?
+## How does Javascript code execute?
 In brief, Javascript is a single-threaded language, meaning it must complete execution of it’s active snippet of code prior to moving on to the next snippet of code.  If that is the case, how is it possible that Javascript is able to delay execution of a snippet until a certain amount of time has passed (using the setTimeout function for example)?
 
 The answer lies in Javascripts intimate connection with the Web API.
