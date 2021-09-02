@@ -36,8 +36,8 @@ const sitemap = [
       ],
     'keyArticles': [
       { id: 'eng-1', name: 'Aysnchronous Behavior in Javascript', href: '/newsLetter/engineering/eng1?newsType=eng' },
-      { id: 'eng-2', name: 'Integrating Next.js with tailwind css', href: '/newsLetter/engineering/eng2?newsType=eng' },
-      { id: 'eng-3', name: 'My lessons teaching JavaScript', href: '/newsLetter/engineering/eng3?newsType=eng' },
+      { id: 'eng-2', name: 'Paint by Render', href: '/newsLetter/engineering/eng2?newsType=eng' },
+      { id: 'eng-3', name: 'System Design and Cars', href: '/newsLetter/engineering/eng3?newsType=eng' },
     ]
   },
   {
