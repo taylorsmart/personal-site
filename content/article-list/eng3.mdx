@@ -1,174 +1,100 @@
 ---
-title: 'Engineering Article 3'
-summary: 'This is Product article one summary'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
+title: 'System Design and Cars'
+summary: 'Drawing an analogy between some basic system design principles and managing automobile supply chains'
+excerpt: 'When thinking about system design and requests being submit and received by your server, I like to draw a parallel with car manufacturing .'
 imageLink: '/assets/images/profileImage.svg'
-keyWords: test
+keyWords: CDN, content delivery network, scaling, vertical scaling, horizontal scaling, caching, cache, cloudflare, domain name system, DNS, TCP, virtual machines, docker, nginx, azure load balancer, aws load balancer, http, data packages
 ---
-## Lorem Ipsum 1
-A breadth-first search is used in a tree and is categorized by checking every node at a given depth, left to right, and only once all the nodes at the current level have been checked do we descend to a deeper level.
+## Overview
+When thinking about system design and requests being submit and received by your server, I like to draw a parallel with car manufacturing.  I’ve heard analogies using a restaurant with various lines chefs used nicely, but I’ll save that analogy for discussion on the value of microservices within backend design.
 
-<!-- end -->
+## Background
+A bit of background is required for those not familiar with Computer Science in how data is transferred between systems before I can fully dive into this analogy. In engineering, we use the term “traffic” or more formally, “Network Traffic”.  Again, I find myself in a situation where the analytics used to describe the efficacy of your network tie in nicely with the analogy I’ve chosen.  Network traffic represents the amount of data moving across a computer network at any given time.  What does that mean?
 
-#### Approach
+Anytime you go to a website, data is being transferred between a sending device and a receiving device.  In most cases, the sending device will be the server serving up the resources to power the site and the receiving device will be the browser which is assembling and executing the data from that server.  There are other steps including communication with a Domain Name System (DNS) a Content Delivery Network (CDN) and a handful of other things which enable and speed up the efficiency of receiving the data, but for the purposes of this article, we are focusing on the communication between the server and the browser.
 
-For each node at a level, check the node's value to see if it matches what we're looking for, then queue up the left and right children of the node. For simplicity we will use a binary tree, though this can be done with a regular tree as well.
+### Now, how exactly is that data transferred?
+It’s reasonable to assume that all data in a single burst.  The browser says, “Hey, I need an HTML file to paint on this DOM” and the Server says, “Here’s your HTML file.”  For small data items, this is indeed how it works.  But what happens when you have a larger sum of data to transmit?
 
-For both solutions, we have to create a binary search tree class. In JavaScript we can create a closure-scoped array and then treat it like a queue data-structure. However, as you'll see, the Go solution is a little more complicated, since you can't do nested functions in Go. This means that we can't *really* do a closure-scoped slice and have to create an official Queue class (with a capital Q, which means it's official. Pretty fancy huh?)
+It’s much more efficient and robust to break up large data transactions into smaller packets and submit each of those smaller packets across the internet.  Why?  Because what if the receiver is not ready to receive the information - what if there is an error and communication somehow stalls or is broken during receipt?
 
-##### JS
+Breaking this data into smaller packets enables a recipient to acknowledge they are receiving data, and gives the recipient a clue on how many data packets they are going to receive.  They can then let the sender know when a packages was successfully received, and (more importantly) can let the sender know when an error occurred and a package needs to be resent.
 
-```js
-function Tree(value) {
-  this.left = null;
-  this.right = null;
-  this.value = value;
-}
+The requester can then combine each received package into the larger data file as each successful package is received.
 
-Tree.prototype.addBranch = function (value) {
-  const branch = new Tree(value);
-  if (value < this.value && !this.left) {
-    this.left = branch;
-  } else if (value > this.value && !this.right) {
-    this.right = branch;
-  } else {
-    value > this.value ? this.right.addBranch(value) : this.left.addBranch(value);
-  }
-}
+## The Analogy
+With that background, let’s think of each of these packages as cars which the server builds and then sends out along on a single lane road.  Between the browser and the server, that’s largely exactly what is occurring.  The browser will request packages that it needs, and the server will compose those packages to be sent along the treacherous road that is an HTTP request.
 
-Tree.prototype.bfs = function (value) {
-  const queue = []; //FIFO
-  return (function bf(node) {
-    console.count('BFS'); // to demonstrate that this is BFS
-    if (node.value === value) return true;
-    if (node.left) queue.push(node.left);
-    if (node.right) queue.push(node.right);
-    return queue.length ? bf(queue.shift()) : false;
-  })(this);
-}
+If we imagine a single user on a website requesting that information from the server, the process is simple - but what if we imagine a million users all hitting the same site at the same time?  That’s a lot of cars, a lot of packages, which the server has to build and send out to a lot of different browsers all at once.  So, how does the server handle that?
 
-const t = new Tree(4);
-t.addBranch(2)
-t.addBranch(3)
-t.addBranch(5)
-// tree structure:
+## Scaling
+There are two options to discuss.  First, you can make a bigger car factory.  If pay to decrease the time that it takes to build those cars by building a super car manufacturing facility, you can quickly process requests and get those cars (or packages) out to every browser that is requesting them.  Second, you can duplicate your existing car manufacturing facility and distribute the load of creating those cars across each facility.
 
-/*
-     4
-   /  \
-  2    5
-   \
-    3
-*/
-// you can see from the structure that a DFS search for '3' would only execute 3 times: once at the root, once at '2', and finally once at '3'
-// a BFS search would execute 4 times: once at the root, once at '2', once at '5', and finally once at '3'
-console.log(t.bfs(3))
-/* BFS: 1
-BFS: 2
-BFS: 3
-BFS: 4
-true */
-```
+These two options are called Vertical and Horizontal scaling methods respectively.  With vertical scaling you pay to have a computer with greater processing speeds - something that can really quickly turn out those packages and send them along the road of the internet.  With horizontal scaling, you duplicate your existing manufacturing facility a hundred times over (something which is significantly cheaper to do when discussing software rather than actual manufacturing facilities) and you distribute the load of creating those packages across many different computers with smaller computing power.
 
-We start by defining a queue as a simple array, and we will guarantee it's FIFO nature by pushing to the end and "pulling" with `shift` from the front. First, check if the search value is the same as the value on the current node. If not, check for the existence of children and pass them into the queue.
+With tools like Docker and the advent of virtual machines (think of each machine as its own manufacturing facility) the ability to duplicate existing environments and horizontally scale is often a cheap and reliable solution to scale lots of network traffic all at once.  But what do those data highways look like?
 
-If there's a left node, push it to the queue. If there's a right node, push it to the queue after pushing the left node. Then we simply recurse through until there is nothing left in the queue (which is the result of nothing more being pushed to the queue).
+### Intro to System Design with Horizontal Scaling
+Moving away from the single lane road of an HTTP request, and diving deeper into the package construction when horizontally scaling - let’s imagine that a Server is a massive city with thousands of requests being made for new cars every millisecond, and thousands of new cars being made every moment.
 
-##### Go
+What’s the first thing you anticipate you might need is… directions to each of the manufacturing plants.  A hundred requests for cars come in at roughly the same time - you have 50 manufacturing plants ready to make the cars and send deliver them - step one.  How do you ensure you use all of your manufacturing plants efficiently?
 
-```go
-package main
+### Load Balancing
+You don’t want to send all of these requests to the same manufacturing facility, as it can’t create two cars at once and it will have to add new requests to the queue.  The answer lies in the term “Load Balancing”.  A load balancer’s key goal is to receive all of these requests for data and redirect the request to a virtual computer which is currently not making a data package.
 
-import (
-	"fmt"
-)
+Popular load balancers like Nginx, Azure Load Balancer, and AWS Load Balancing and each of those can distribute the load to a manufactucturing facility that is not currently in service.
 
-func main() {
-	q := &TreeQueue{}
-	t := &BinaryTree{value: 4}
-	t.addChild(2)
-	t.addChild(5)
-	t.addChild(3)
-	fmt.Println(t.bfs(3, q))
-	// eval
-	// eval
-	// eval
-	// eval
-	// true
-}
+Now we’ve solved the problem of getting requests to the right manufacturing facility - but we have a new problem.  Right now (and I haven’t mentioned this) every car manufacturing facility needs to request the blueprint from the Auto Designer on how to make the car every single time a request is made.
 
-type BinaryTree struct {
-	left *BinaryTree
-	right *BinaryTree
-	value int
-}
+As you can image that might create a potential bottleneck on the Automobile Designer or (in this analogy) the database.  So how can we circumvent the need to request the blueprint every single time?
 
-func (t *BinaryTree) addChild(v int) {
-	c := &BinaryTree{value: v}
-	if v > t.value {
-		if t.right == nil {
-			t.right = c
-		} else {
-			t.right.addChild(v)
-		}
-	} else if v < t.value {
-		if t.left == nil {
-			t.left = c
-		} else {
-			t.left.addChild(v)
-		}
-	}
-}
+What if we stored the blueprint at the manufacturer?  If we had a blueprint of the most commonly selected cars, we could limit the number of calls heading out to our Automobile Designer and we could limit the impact of that bottleneck.
 
-type TreeQueue struct { // Go does not currently support generics, so we have to make a TreeQueue
-	_storage []*BinaryTree
-}
+### Caching
+The general concept of storing commonly requested data in a layer away from the database is called caching your data.  Caching occurs to optimize fetches across the entirely of the web, whether that is in commonly requested IP addresses, images when you visit the same website multiple times, or (in this case) commonly requested data items feeding back to a browser.
 
-func (q *TreeQueue) size() int {
-	return len(q._storage)
-}
+There’s a limit (or there should be) to the number of blueprints you want to store in a cache.  I say there should be, because maintaining full duplications of the database would be highly resource intensive and there is a tradeoff between the number of blueprints stored and the efficiency gains of a cache.
 
-func (q *TreeQueue) enqueue(t *BinaryTree) {
-	q._storage = append(q._storage, t)
-}
+So, how do we decide what to and what not to include in a cache?
+If you again take the scenario where you have 100 blueprints for different cars (or data packages), your goal is to find the data that will reduce the requests on your Auto Designer database the most.
 
-func (q *TreeQueue) dequeue() *BinaryTree {
-	shifted := q._storage[0]
-	if len(q._storage) > 1 {
-		q._storage = q._storage[1:]
-	}
-	return shifted
-}
+One manner of doing this is to store the data that was requested soonest. Say you have a cache with the ability to only store three blueprints and requests come in, in the following order.
 
-func (t *BinaryTree) bfs(v int, q *TreeQueue) bool {
-	fmt.Println("eval")
-	if t.value == v {
-		return true
-	}
-	if v < t.value {
-		if t.left != nil {
-			q.enqueue(t.left)
-		}
-	}
-	if v > t.value {
-		if t.right != nil {
-			q.enqueue(t.right)
-		}
-	}
-	if (q.size() > 0) {
-		return q.dequeue().bfs(v, q)
-	} else {
-		return false
-	}
-}
-```
+Camry
+F-150
+Camry
+Model S
+Model S
+F-150
+Camry
+SmartCar
 
-Let's start with our binary search tree struct. The BST has a `left` and a `right`, as well as a `value`. The `left` and `right` properties will either be `nil` (when initialized) or a `BinaryTree` (when branches added). The `addChild` method checks the current tree and determines where it can place the new child, if at all. If it can't, it appropriately delegates assignment to either the `left` or `right` child.
+Visually, you can tell storing in a cache the data for a Camry and an F-150 would reduce the blueprint requests to the Designer fairly substantially.   If you requested the data that was last fetched, the blueprints stored in your cache would be:
+SmartCar
+Camry
+F-150
 
-The `TreeQueue` struct has a simple `_storage` property that is an empty slice of type `BinaryTree` -- this is where we'll store the branches to be searched. The `enqueue` method simply adds `BinaryTree`s to the end of the slice, and the `dequeue` method reassigns `_storage` to be sliced from the second element onwards, and returns the first element that is now dropped from `_storage`.
+There is a greater likelihood that the cars most commonly requested will ensure their presence in your cache, because… they are most commonly requested.
 
-Now we are ready to search! The logic here is the same as the JavaScript logic, and we recursively go through the nodes that are pushed into the queue in a FIFO manner.
+But, what is that SmartCar doing in there?  Is it doing any good?
+The short answer is, it might be.  In situations where you have more varietal fetching and where you aren’t able to always predict the most common fetches, doing a time based caching store will capture those trends.
 
-#### Summary
+The perfect example of this might be someone searching umbrellas on a rainy day.  Searches for umbrellas go up as people realize they need an umbrella.  While it may not be the most common request after a sunny week, storing the last requested data in the cache would ensure that after the first request for an umbrella, every individual who realizes they need an umbrella that rainy day will have a better, more timely fetch experience.
 
-This is a fun prompt and definitely helped my solidify my knowledge of Go. I'm a big fan of the breadth-first search algorithm, not necessarily because of the use cases but rather because of the knowledge of data structures that is required to successfully implement the algorithm.
+The other common way to create a cache is to find the most commonly requested data.  In some situations, you know the data that is going to be most commonly fetched (you know, for example, that your logo is going to be loaded every time the page loads).  In the above fetches, your cached data would be blueprints for:
+Camry
+F-150
+Model S
+
+This method ensures that necessary data is always going to be present and will not require a request to the database in order to construct the data package.
+
+There are a handful of other optimizations with caching which will be covered in future articles - but one related topic is the extreme optimizations you can make with static resources which you know will always be fetched every time a page loads (think of that logo again).
+
+### Content Delivery Networks (CDN’s) as Car Warehouses
+As you can imagine, no matter how quickly you churn out those cars - the further they have to travel on the internet to the end browser, the longer it will take to receive the data.  In the US, most highways have a maximum speed limit of 80 mph, imagine the same is true with sending and receiving data across the internet.  There’s a (relatively) static time speed of transmission and the further they have to travel, the longer it will take for the browser to receive each package sent by the server.  If you open up a website in rural Estonia, if the server your Browser is receiving information from is located all the way in North East Canada, you can expect that website to load substantially slower than if you open up the same site from North East Canada.
+
+The birth of CDN’s came when a savvy group of engineers realized that it is possible to improve the delivery time of those cars by pre-making them and storing them at locations closer to their common requestors.   Companies use CDN’s like Cloudflare, Sucuri, Amazon CloudFront to pre-load their large data packages and store them at locations that are geographically closer to their end users.
+
+This means that the not only is the distance the data has to travel along that road substantially shorter but also that the data packages are less liable to be accosted by pirates (you’re less likely to have errors on receipt).  You increase efficacy and reduce transmission time.
+
+CDN’s can therefore be thought of as data warehouses spread across the globe to improve data transmission.
