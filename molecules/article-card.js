@@ -40,7 +40,7 @@ const ArticleCard = ({title, summary, slug, imageLink, newsType, styleArray, ind
             <Image
                 alt={title}
                 src={imageLink}
-                className="h-8 w-auto sm:h-10"
+                className="h-8 w-auto sm:h-10  rounded-full"
                 width={180}
                 height={180}
             ></Image>

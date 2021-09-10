@@ -40,25 +40,25 @@ const sitemap = [
       { id: 'eng-3', name: 'System Design and Cars', href: '/newsLetter/engineering/eng3?newsType=eng' },
     ]
   },
-  {
-    'page':'Product',
-    'key':2,
-    'primaryLink':'/newsLetter?newsType=prd',
-    'subLinks':
-      [
-        {
-          name: 'Product Blog',
-          description: 'Product analysis with a behavioral science twist.',
-          href: '/newsLetter?newsType=prd',
-          icon: PencilIcon,
-        },
-    ],
-    'keyArticles': [
-      { id: 'prd1', name: 'Boost your conversion rate', href: '/newsLetter/product/prd1?newsType=prd' },
-      { id: 'prd-2', name: 'How to use search engine optimization to drive traffic to your site', href: '/newsLetter/product/prd2?newsType=prd' },
-      { id: 'prd-3', name: 'Improve your customer experience', href: '/newsLetter/product/prd3?newsType=prd' },
-    ]
-  },
+  // {
+  //   'page':'Product',
+  //   'key':2,
+  //   'primaryLink':'/newsLetter?newsType=prd',
+  //   'subLinks':
+  //     [
+  //       {
+  //         name: 'Product Blog',
+  //         description: 'Product analysis with a behavioral science twist.',
+  //         href: '/newsLetter?newsType=prd',
+  //         icon: PencilIcon,
+  //       },
+  //   ],
+  //   'keyArticles': [
+  //     { id: 'prd1', name: 'Boost your conversion rate', href: '/newsLetter/product/prd1?newsType=prd' },
+  //     { id: 'prd-2', name: 'How to use search engine optimization to drive traffic to your site', href: '/newsLetter/product/prd2?newsType=prd' },
+  //     { id: 'prd-3', name: 'Improve your customer experience', href: '/newsLetter/product/prd3?newsType=prd' },
+  //   ]
+  // },
   {
     'page':'Contact',
     'key':4,
