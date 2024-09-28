@@ -3,9 +3,8 @@ import {
   CalendarIcon,
   PencilIcon,
   SupportIcon,
-} from '@heroicons/react/outline'
-import content from './about-me/about-me-content'
-
+} from "@heroicons/react/24/outline";
+import content from "./about-me/about-me-content";
 
 const sitemap = [
   // {
@@ -16,29 +15,40 @@ const sitemap = [
   //   'keyArticles': []
   // },
   {
-    'page':'Engineering',
-    'key':3,
-    'primaryLink':'/newsLetter?newsType=eng',
-    'subLinks':
-      [
-        {
-          name: 'Engineering Blog',
-          description: 'Notes on my path to become a better engineer.',
-          href: '/newsLetter?newsType=eng',
-          icon: PencilIcon,
-        },
-        // {
-        //   name: 'Projects',
-        //   description: 'A handful of projects I\'ve worked on.',
-        //   href: '#',
-        //   icon: SupportIcon,
-        // },
-      ],
-    'keyArticles': [
-      { id: 'eng-1', name: 'Aysnchronous Behavior in Javascript', href: '/newsLetter/engineering/eng1?newsType=eng' },
-      { id: 'eng-2', name: 'Paint by Render', href: '/newsLetter/engineering/eng2?newsType=eng' },
-      { id: 'eng-3', name: 'System Design and Cars', href: '/newsLetter/engineering/eng3?newsType=eng' },
-    ]
+    page: "Engineering",
+    key: 3,
+    primaryLink: "/newsLetter?newsType=eng",
+    subLinks: [
+      {
+        name: "Engineering Blog",
+        description: "Notes on my path to become a better engineer.",
+        href: "/newsLetter?newsType=eng",
+        icon: PencilIcon,
+      },
+      // {
+      //   name: 'Projects',
+      //   description: 'A handful of projects I\'ve worked on.',
+      //   href: '#',
+      //   icon: SupportIcon,
+      // },
+    ],
+    keyArticles: [
+      {
+        id: "eng-1",
+        name: "Aysnchronous Behavior in Javascript",
+        href: "/newsLetter/engineering/eng1?newsType=eng",
+      },
+      {
+        id: "eng-2",
+        name: "Paint by Render",
+        href: "/newsLetter/engineering/eng2?newsType=eng",
+      },
+      {
+        id: "eng-3",
+        name: "System Design and Cars",
+        href: "/newsLetter/engineering/eng3?newsType=eng",
+      },
+    ],
   },
   // {
   //   'page':'Product',
@@ -60,10 +70,10 @@ const sitemap = [
   //   ]
   // },
   {
-    'page':'Contact',
-    'key':4,
-    'primaryLink':content.links.calendly,
-    'subLinks': [
+    page: "Contact",
+    key: 4,
+    primaryLink: content.links.calendly,
+    subLinks: [
       // {
       //   name: 'Email',
       //   description: 'Send me an email.',
@@ -71,14 +81,14 @@ const sitemap = [
       //   icon: MailIcon,
       // },
       {
-        name: 'Book a Meeting',
-        description: 'Schedule a meeting to chat with me directly.',
-        href: 'https://calendly.com/taylorsmart/30-minute-chat',
+        name: "Book a Meeting",
+        description: "Schedule a meeting to chat with me directly.",
+        href: "https://calendly.com/taylorsmart/30-minute-chat",
         icon: CalendarIcon,
       },
     ],
-    'keyArticles': []
-  }
-]
+    keyArticles: [],
+  },
+];
 
-export default sitemap
+export default sitemap;
