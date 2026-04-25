@@ -5,27 +5,53 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky"
   },
   "dependencies": {
-    "@headlessui/react": "^1.4.0",
+    "@headlessui/react": "^2.2.10",
     "@heroicons/react": "^1.0.3",
     "@loadable/component": "^5.15.0",
-    "@mdx-js/loader": "^1.6.22",
-    "@mdx-js/mdx": "^1.6.22",
-    "@next/mdx": "^11.1.0",
-    "@tailwindcss/typography": "^0.4.1",
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/mdx": "^3.1.1",
+    "@next/mdx": "^16.2.4",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
-    "next": "^11.0.0",
-    "next-mdx-remote": "^3.0.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "reading-time": "^1.4.0"
+    "next": "^16.2.4",
+    "next-mdx-remote": "^6.0.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "reading-time": "^1.4.0",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.4",
+    "@typescript-eslint/eslint-plugin": "^8.59.0",
+    "@typescript-eslint/parser": "^8.59.0",
     "autoprefixer": "^10.3.1",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "postcss": "^8.3.6",
-    "tailwindcss": "^2.2.7"
+    "prettier": "^3.8.3",
+    "tailwindcss": "^4.2.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
   }
 }
