@@ -5,84 +5,91 @@ import { siteContent } from '@/content/site'
 
 export default function HomeHero() {
   const { profile } = siteContent
+  const heroSignals = [
+    ['Focus', 'Full-stack systems'],
+    ['Background', 'Engineering + product'],
+    ['Style', 'Calm, rigorous, practical'],
+  ]
 
   return (
-    <section className="section-shell pt-10 md:pt-16">
+    <section className="section-shell pt-6 md:pt-10">
       <div className="hero-panel">
-        <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.18fr)_360px] lg:items-center">
           <div className="max-w-3xl">
+            <div className="accent-rule accent-rule-pop" />
             <p className="eyebrow">{profile.role}</p>
             <h1 className="hero-title text-wrap-balance">
               Engineering judgment with product instincts.
             </h1>
-            <p className="hero-copy max-w-2xl">{profile.intro}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href={profile.links.calendly} className="button-primary">
-                {profile.contactLabel}
-              </Link>
+            <p
+              className="hero-copy hero-entrance max-w-2xl"
+              style={{ animationDelay: '90ms' }}
+            >
+              {profile.intro}
+            </p>
+            <div
+              className="hero-entrance mt-8 flex flex-wrap gap-3"
+              style={{ animationDelay: '160ms' }}
+            >
+              <span className="button-primary-shell button-bubble-hero">
+                <Link href={profile.links.calendly} className="button-primary">
+                  {profile.contactLabel}
+                </Link>
+              </span>
               <Link href="/newsLetter" className="button-secondary">
                 Read the Writing
               </Link>
             </div>
-            <div className="mt-8 grid gap-5 text-sm text-[color:var(--color-muted)] sm:grid-cols-3">
-              <div>
-                <p className="stat-label">Focus</p>
-                <p className="stat-value">Full-stack systems</p>
-              </div>
-              <div>
-                <p className="stat-label">Background</p>
-                <p className="stat-value">Engineering + product</p>
-              </div>
-              <div>
-                <p className="stat-label">Working Style</p>
-                <p className="stat-value">Calm, rigorous, practical</p>
-              </div>
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              {heroSignals.map(([label, value]) => (
+                <div key={label} className="surface-card-compact">
+                  <p className="stat-label">{label}</p>
+                  <p className="stat-value">{value}</p>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="grid gap-4 lg:justify-items-end">
-            <div className="relative w-full max-w-sm overflow-hidden rounded-[2rem] border border-[color:var(--color-border-strong)] bg-[linear-gradient(135deg,rgba(255,255,255,0.88),rgba(255,255,255,0.4))] p-5 shadow-[0_30px_80px_rgba(25,36,32,0.14)]">
-              <div className="absolute right-4 top-4 h-20 w-20 rounded-full bg-[color:var(--color-accent-soft)] blur-2xl" />
-              <div className="relative">
-                <Image
-                  src={profile.avatar}
-                  alt={`Portrait of ${profile.name}`}
-                  width={280}
-                  height={280}
-                  priority
-                  className="mx-auto aspect-square rounded-[1.5rem] object-cover"
-                />
-                <div className="mt-5 flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-lg font-semibold text-[color:var(--color-ink)]">
-                      {profile.name}
-                    </p>
-                    <p className="text-sm text-[color:var(--color-muted)]">
-                      {profile.location}
-                    </p>
-                  </div>
-                  <div className="flex gap-3 text-sm">
-                    <Link
-                      href={profile.links.github}
-                      className="text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)]"
-                    >
-                      GitHub
-                    </Link>
-                    <Link
-                      href={profile.links.linkedin}
-                      className="text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)]"
-                    >
-                      LinkedIn
-                    </Link>
-                  </div>
-                </div>
+          <aside
+            className="surface-card surface-card-emphasis hero-entrance border-t-4 border-t-[color:var(--color-pop)] lg:justify-self-end"
+            style={{ animationDelay: '220ms' }}
+            aria-label="Profile summary"
+          >
+            <Image
+              src={profile.avatar}
+              alt={`Portrait of ${profile.name}`}
+              width={280}
+              height={280}
+              priority
+              className="mx-auto aspect-square w-44 rounded-lg object-cover md:w-52"
+            />
+            <div className="mt-5">
+              <p className="text-lg font-semibold text-[color:var(--color-ink)]">
+                {profile.name}
+              </p>
+              <p className="mt-1 text-sm leading-6 text-[color:var(--color-muted)]">
+                {profile.location}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3 text-sm">
+                <Link
+                  href={profile.links.github}
+                  className="category-pill transition-colors hover:border-[color:var(--color-accent)] hover:bg-[color:var(--color-accent-wash)] hover:text-[color:var(--color-accent-deep)]"
+                >
+                  GitHub
+                </Link>
+                <Link
+                  href={profile.links.linkedin}
+                  className="category-pill transition-colors hover:border-[color:var(--color-accent)] hover:bg-[color:var(--color-accent-wash)] hover:text-[color:var(--color-accent-deep)]"
+                >
+                  LinkedIn
+                </Link>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
 
-        <div className="mt-12 max-w-3xl border-t border-[color:var(--color-border)] pt-8">
-          <div className="article-prose text-[color:var(--color-muted)]">
+        <div className="mt-8 border-t border-[color:var(--color-border)] pt-6">
+          <div className="article-prose max-w-4xl text-[color:var(--color-muted)]">
             <ShortBio />
           </div>
         </div>

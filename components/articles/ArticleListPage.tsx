@@ -15,6 +15,17 @@ const categoryLinks = [
   { label: 'Product', href: '/newsLetter/product' },
 ]
 
+function isActiveCategory(
+  activeCategory: ArticleCategory | undefined,
+  href: string
+) {
+  return (
+    (activeCategory === 'engineering' && href === '/newsLetter/engineering') ||
+    (activeCategory === 'product' && href === '/newsLetter/product') ||
+    (!activeCategory && href === '/newsLetter')
+  )
+}
+
 export default function ArticleListPage({
   title,
   description,
@@ -23,7 +34,7 @@ export default function ArticleListPage({
 }: ArticleListPageProps) {
   return (
     <div className="page-shell">
-      <section className="section-shell pt-16">
+      <section className="section-shell pt-10">
         <div className="hero-panel">
           <div className="max-w-3xl">
             <p className="eyebrow">Writing</p>
@@ -50,14 +61,10 @@ export default function ArticleListPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`rounded-2xl border px-4 py-3 text-sm font-medium transition-colors ${
-                      (activeCategory === 'engineering' &&
-                        link.href === '/newsLetter/engineering') ||
-                      (activeCategory === 'product' &&
-                        link.href === '/newsLetter/product') ||
-                      (!activeCategory && link.href === '/newsLetter')
-                        ? 'border-[color:var(--color-border-strong)] bg-[color:var(--color-surface-strong)] text-[color:var(--color-ink)]'
-                        : 'border-[color:var(--color-border)] text-[color:var(--color-muted)] hover:bg-[color:var(--color-surface-strong)] hover:text-[color:var(--color-ink)]'
+                    className={`rounded-lg border px-4 py-3 text-sm font-medium transition-colors ${
+                      isActiveCategory(activeCategory, link.href)
+                        ? 'border-[color:var(--color-accent)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-accent-deep)]'
+                        : 'border-[color:var(--color-border)] text-[color:var(--color-muted)] hover:border-[color:var(--color-pop)] hover:bg-[color:var(--color-pop-soft)] hover:text-[color:var(--color-ink)]'
                     }`}
                   >
                     {link.label}
@@ -74,14 +81,10 @@ export default function ArticleListPage({
                     <Link
                       key={link.href}
                       href={link.href}
-                      className={`rounded-2xl border px-4 py-3 text-sm font-medium transition-colors ${
-                        (activeCategory === 'engineering' &&
-                          link.href === '/newsLetter/engineering') ||
-                        (activeCategory === 'product' &&
-                          link.href === '/newsLetter/product') ||
-                        (!activeCategory && link.href === '/newsLetter')
-                          ? 'border-[color:var(--color-border-strong)] bg-[color:var(--color-surface-strong)] text-[color:var(--color-ink)]'
-                          : 'border-[color:var(--color-border)] text-[color:var(--color-muted)] hover:bg-[color:var(--color-surface-strong)] hover:text-[color:var(--color-ink)]'
+                      className={`rounded-lg border px-4 py-3 text-sm font-medium transition-colors ${
+                        isActiveCategory(activeCategory, link.href)
+                          ? 'border-[color:var(--color-accent)] bg-[color:var(--color-accent-wash)] text-[color:var(--color-accent-deep)]'
+                          : 'border-[color:var(--color-border)] text-[color:var(--color-muted)] hover:border-[color:var(--color-pop)] hover:bg-[color:var(--color-pop-soft)] hover:text-[color:var(--color-ink)]'
                       }`}
                     >
                       {link.label}
@@ -94,14 +97,20 @@ export default function ArticleListPage({
 
           <div className="writing-main">
             <div className="writing-main-header">
-              <p className="text-sm text-[color:var(--color-muted)]">
+              <p className="category-pill">
                 {articles.length} {articles.length === 1 ? 'entry' : 'entries'}
               </p>
             </div>
             <div className="border-t border-[color:var(--color-border)]">
-              {articles.map((article) => (
-                <ArticleCard key={article.slug} article={article} />
-              ))}
+              {articles.length > 0 ? (
+                articles.map((article) => (
+                  <ArticleCard key={article.slug} article={article} />
+                ))
+              ) : (
+                <p className="py-8 text-sm text-[color:var(--color-muted)]">
+                  No entries published yet.
+                </p>
+              )}
             </div>
           </div>
         </div>

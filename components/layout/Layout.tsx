@@ -28,7 +28,7 @@ export default function Layout({
         <title>{siteTitle}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#f5f1e8" />
+        <meta name="theme-color" content="#f5f5f5" />
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content={siteTitle} />
         <meta property="og:description" content={description} />
@@ -49,9 +49,10 @@ export default function Layout({
         <NavBar />
         <main id="main-content">{children}</main>
         <footer className="section-shell pb-12 pt-4">
-          <div className="rounded-[2rem] border border-[color:var(--color-border)] bg-[color:var(--color-surface)] px-6 py-8 md:px-8">
+          <div className="surface-card surface-card-emphasis border-t-4 border-t-[color:var(--color-pop)] px-6 py-8 md:px-8">
             <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-end">
               <div>
+                <div className="accent-rule accent-rule-pop" />
                 <p className="eyebrow">Stay in Touch</p>
                 <h2 className="section-title text-wrap-balance">
                   Interested in thoughtful engineering and product work?
@@ -74,12 +75,14 @@ export default function Layout({
                 >
                   LinkedIn
                 </Link>
-                <Link
-                  href={siteContent.profile.links.calendly}
-                  className="button-primary"
-                >
-                  {siteContent.profile.contactLabel}
-                </Link>
+                <span className="button-primary-shell button-bubble-footer">
+                  <Link
+                    href={siteContent.profile.links.calendly}
+                    className="button-primary"
+                  >
+                    {siteContent.profile.contactLabel}
+                  </Link>
+                </span>
               </div>
             </div>
           </div>

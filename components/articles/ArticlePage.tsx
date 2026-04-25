@@ -21,11 +21,11 @@ export default function ArticlePage({
 
   return (
     <div className="page-shell">
-      <section className="section-shell pt-16">
+      <section className="section-shell pt-10">
         <div className="hero-panel">
           <Link
             href={categoryHref}
-            className="eyebrow inline-flex items-center gap-2 transition-opacity hover:opacity-70"
+            className="category-pill inline-flex items-center gap-2 transition-colors hover:border-[color:var(--color-accent)] hover:bg-[color:var(--color-accent-wash)] hover:text-[color:var(--color-accent-deep)]"
           >
             <span aria-hidden="true">←</span>
             Back to {categoryLabel}
@@ -38,12 +38,16 @@ export default function ArticlePage({
             <p className="hero-copy max-w-2xl">
               {frontMatter.summary || frontMatter.excerpt}
             </p>
-            <div className="mt-6 flex flex-wrap gap-4 text-sm text-[color:var(--color-muted)]">
+            <div className="mt-6 flex flex-wrap gap-3 text-sm text-[color:var(--color-muted)]">
               {frontMatter.readingTime?.text ? (
-                <span>{frontMatter.readingTime.text}</span>
+                <span className="project-chip">
+                  {frontMatter.readingTime.text}
+                </span>
               ) : null}
               {frontMatter.wordCount ? (
-                <span>{frontMatter.wordCount} words</span>
+                <span className="project-chip">
+                  {frontMatter.wordCount} words
+                </span>
               ) : null}
             </div>
           </div>

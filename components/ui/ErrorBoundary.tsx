@@ -46,19 +46,21 @@ class ErrorBoundary extends React.Component<
       }
 
       return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50">
-          <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-6">
+        <div className="flex min-h-screen items-center justify-center bg-[color:var(--color-bg)]">
+          <div className="surface-card surface-card-emphasis w-full max-w-md border-t-4 border-t-[color:var(--color-pop)]">
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="mb-4 text-2xl font-bold text-[color:var(--color-ink)]">
                 Something went wrong
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="mb-6 text-[color:var(--color-muted)]">
                 We apologize for the inconvenience. Please try refreshing the
                 page.
               </p>
-              <button onClick={this.resetError} className="btn-primary">
-                Try Again
-              </button>
+              <span className="button-primary-shell button-bubble-error">
+                <button onClick={this.resetError} className="button-primary">
+                  Try Again
+                </button>
+              </span>
             </div>
           </div>
         </div>
