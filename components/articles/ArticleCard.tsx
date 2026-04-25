@@ -7,6 +7,10 @@ interface ArticleCardProps {
 }
 
 export default function ArticleCard({ article }: ArticleCardProps) {
+  if (article.hidden) {
+    return null
+  }
+
   const href = article.path ?? '#'
   const categoryLabel =
     article.category === 'product' ? 'Product Notes' : 'Engineering Notes'

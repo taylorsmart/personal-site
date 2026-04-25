@@ -7,6 +7,7 @@ export interface FrontMatter {
   references?: string[]
   slug?: string
   date?: string
+  hidden?: boolean
   wordCount?: number
   category?: ArticleCategory
   path?: string

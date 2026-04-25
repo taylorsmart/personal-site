@@ -61,7 +61,7 @@ export default function HomeHero() {
               width={280}
               height={280}
               priority
-              className="mx-auto aspect-square w-44 rounded-lg object-cover md:w-52"
+              className="mx-auto aspect-square h-auto w-44 rounded-lg object-cover md:w-52"
             />
             <div className="mt-5">
               <p className="text-lg font-semibold text-[color:var(--color-ink)]">

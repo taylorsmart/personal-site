@@ -5,7 +5,7 @@ export const siteContent: SiteContent = {
     name: 'Taylor Smart',
     role: 'Product-minded Software Engineer',
     location: 'Based in the United States',
-    avatar: '/assets/images/profileImage.svg',
+    avatar: '/assets/images/profileImagev3.jpg',
     intro:
       'I build thoughtful digital products with a bias toward clarity, performance, and useful outcomes.',
     longBio:
