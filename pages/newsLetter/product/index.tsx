@@ -14,8 +14,8 @@ export default function ProductIndex({ articles }: ProductIndexProps) {
       description="Product articles and team notes from Taylor Smart."
     >
       <ArticleListPage
-        title="Product writing shaped by delivery realities."
-        description="Notes on retrospectives, planning, communication, and the operating habits that make cross-functional teams more effective."
+        title="Product writing from the delivery side."
+        description="Notes on retrospectives, planning, communication, and the habits that help teams make better decisions for the user."
         articles={articles}
         activeCategory="product"
       />

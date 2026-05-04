@@ -34,7 +34,7 @@ export default function HomeMain(props: HomeMainProps) {
   return (
     <Layout
       title="Taylor Smart"
-      description="Product-minded engineering portfolio, writing, and selected work from Taylor Smart."
+      description="Engineering, product management, and creative writing from Taylor Smart."
     >
       <HomePageContent {...props} />
     </Layout>

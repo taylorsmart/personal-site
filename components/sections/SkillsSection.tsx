@@ -13,15 +13,15 @@ export default function SkillsSection() {
       <div className="section-header">
         <div>
           <div className="accent-rule" />
-          <p className="eyebrow">Capabilities</p>
+          <p className="eyebrow">Tools I Use</p>
           <h2 className="section-title text-wrap-balance">
-            A mix of engineering depth, systems thinking, and product fluency.
+            I equally engjoy identifying the core user needs on product and
+            writing the code that addresses those needs for the users.
           </h2>
         </div>
         <p className="section-copy md:justify-self-end">
-          The strongest work usually sits at the boundary between disciplines.
-          This background lets me move from implementation details to user value
-          without treating them as separate conversations.
+          Edge cases are the most common failure point in code, and the only way
+          to proactively address them is by knowing the use cases fully.
         </p>
       </div>
 

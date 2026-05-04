@@ -15,7 +15,7 @@ export default function NewsLetterIndex({ articles }: NewsLetterIndexProps) {
     >
       <ArticleListPage
         title="Writing on engineering, product, and how good decisions get made."
-        description="A running set of notes on systems, execution, team dynamics, and the practical tradeoffs that shape modern product development."
+        description="Notes on systems, execution, team habits, and the tradeoffs that show up when ideas are written into software."
         articles={articles}
       />
     </Layout>

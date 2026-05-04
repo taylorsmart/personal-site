@@ -16,7 +16,7 @@ interface LayoutProps {
 export default function Layout({
   children,
   title = 'Taylor Smart',
-  description = 'Engineering, product, and systems thinking from Taylor Smart.',
+  description = 'Engineering, product management, and creative writing from Taylor Smart.',
   image = '/assets/images/personal-site-image.png',
   url = 'https://taylorsmart.dev',
 }: LayoutProps) {
@@ -55,11 +55,11 @@ export default function Layout({
                 <div className="accent-rule accent-rule-pop" />
                 <p className="eyebrow">Stay in Touch</p>
                 <h2 className="section-title text-wrap-balance">
-                  Interested in thoughtful engineering and product work?
+                  Want to talk through a product or engineering problem?
                 </h2>
                 <p className="section-copy max-w-2xl">
-                  I like teams that care about substance, clarity, and building
-                  products people actually want to use.
+                  I am usually most useful when the problem is still a little
+                  messy and the right shape is not obvious yet.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 md:justify-end">

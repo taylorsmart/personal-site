@@ -25,9 +25,7 @@ export default function ProjectsSection() {
             together.
           </h2>
           <p className="section-copy">
-            These are different in scope, but they share the same through-line:
-            clean structure, practical tradeoffs, and a strong opinion about
-            user value.
+            They are different in scope, but each one had good lessons for me.
           </p>
         </div>
 

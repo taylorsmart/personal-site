@@ -94,7 +94,7 @@ const experienceTimeline = [
     accent: 'border-t-[color:var(--color-accent)]',
     quiet: true,
     details: [
-      'Progressed through product developer, product specialist, and associate product manager roles while building technical requirements and delivery fluency.',
+      'Progressed through product developer, product specialist, and associate product manager roles while learning how requirements change once real teams use the work.',
       'Co-managed a small team of product developers and engineers supporting benchmark products.',
     ],
   },
@@ -215,11 +215,8 @@ export default function About() {
                 systems.
               </h1>
               <p className="hero-copy max-w-3xl">
-                Product-driven Staff Software Engineer with a background in
-                product management and consulting, focused on scalable,
-                user-centered systems. I bridge product strategy and engineering
-                execution by turning user insight into well-architected
-                technical solutions.
+                Staff Software Engineer with a background in product management
+                and financial consulting.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <span className="button-primary-shell button-bubble-hero">

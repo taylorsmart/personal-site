@@ -3,13 +3,12 @@ import type { SiteContent } from '@/types'
 export const siteContent: SiteContent = {
   profile: {
     name: 'Taylor Smart',
-    role: 'Product-minded Software Engineer',
+    role: 'Software Engineer + Product Builder',
     location: 'Based in the United States',
     avatar: '/assets/images/profileImagev3.jpg',
-    intro:
-      'I build thoughtful digital products with a bias toward clarity, performance, and useful outcomes.',
+    intro: 'I build software to meet user needs.',
     longBio:
-      'My background spans engineering, product management, and behavioral science. That mix pushes me toward systems that are technically sound, easy to understand, and grounded in what users actually need.',
+      'My background spans engineering, product management, and behavioral science. I like work where the product question and the implementation details have to be solved together.',
     contactLabel: 'Book a Conversation',
     links: {
       calendly: 'https://calendly.com/taylorsmart/30-minute-chat',
@@ -19,10 +18,9 @@ export const siteContent: SiteContent = {
     },
   },
   principles: [
-    'Evaluate tradeoffs with enough rigor that teams can move quickly without guessing.',
-    'Design interfaces that feel deliberate and useful rather than ornamental.',
-    'Build test suites that protect behavior instead of creating noise.',
-    'Work in close partnership with stakeholders, not downstream from them.',
+    'Make tradeoffs explicit before the team commits to a direction.',
+    'Design interfaces around what the person should do next, not just what they try to do next.',
+    'Keep product, design, and engineering in the same conversation.',
   ],
   skills: [
     {
@@ -120,7 +118,7 @@ export const siteContent: SiteContent = {
       link: 'https://github.com/taylorsmart/personal-site',
       image: '/assets/images/personal-site-image.svg',
       shortDesc:
-        'A portfolio and writing platform built with Next.js and Tailwind, focused on crisp information architecture and maintainable content workflows.',
+        'A Next.js and Tailwind site for portfolio work and writing, built to keep content easy to maintain.',
       stack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     },
     {
@@ -129,7 +127,7 @@ export const siteContent: SiteContent = {
       link: 'https://github.com/SDC-Team-Snowed-In/project-catwalk',
       image: '/assets/images/next-level-backend.svg',
       shortDesc:
-        'A high-throughput commerce backend built to meet demanding response time and API efficiency requirements on a legacy frontend surface.',
+        'A commerce backend built around response-time constraints, API shape, and an inherited frontend.',
       stack: ['Node.js', 'PostgreSQL', 'Express'],
     },
     {
@@ -138,7 +136,7 @@ export const siteContent: SiteContent = {
       link: 'https://github.com/Nvision-Nutrition/nvision',
       image: '/assets/images/nvision.svg',
       shortDesc:
-        'A mobile-first product that combined playful UX with practical nutrition tracking, built in close collaboration with a real client and team.',
+        'A mobile-first nutrition product built with a client team, balancing playful interaction with practical tracking.',
       stack: ['React', 'Next.js', 'Bootstrap'],
     },
   ],
