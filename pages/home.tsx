@@ -1,4 +1,5 @@
 import Layout from '@/components/layout/Layout'
+import Link from 'next/link'
 import type { FrontMatter } from '@/types'
 import { getAllFilesFrontMatter } from '@/utils/mdx'
 import FeaturedWritingSection from '@/components/sections/FeaturedWritingSection'
@@ -16,6 +17,16 @@ export function HomePageContent({ featuredArticles }: HomeMainProps) {
   return (
     <>
       <HomeHero />
+      <div className="section-shell pb-2 pt-2 md:pb-3">
+        <div className="flex justify-center">
+          <Link href="#home-sections" className="scroll-indicator">
+            <span className="scroll-indicator-copy">Scroll for more</span>
+            <span className="scroll-indicator-line" aria-hidden="true">
+              <span className="scroll-indicator-dot" />
+            </span>
+          </Link>
+        </div>
+      </div>
       <ScrollReveal className="reveal-quiet">
         <SkillsSection />
       </ScrollReveal>
