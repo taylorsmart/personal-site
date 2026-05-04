@@ -801,12 +801,49 @@
     color: var(--color-accent-deep);
   }
 
-  .principle-item {
-    @apply rounded-lg border px-5 py-4 text-sm leading-7;
+  .work-values-grid {
+    @apply grid gap-5 lg:grid-cols-3;
+  }
+
+  .work-value-card {
+    @apply relative overflow-hidden rounded-lg border border-t-4 p-5 md:p-6;
     border-color: var(--color-border);
+    border-top-color: var(--color-pop);
     background:
-      linear-gradient(90deg, var(--color-pop-soft), rgba(255, 255, 255, 0) 32%),
-      var(--color-surface);
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.86),
+        rgba(245, 245, 245, 0.72)
+      ),
+      linear-gradient(90deg, rgba(38, 120, 142, 0.08), rgba(226, 72, 12, 0.05));
+    box-shadow: 0 14px 40px rgba(48, 76, 100, 0.07);
+  }
+
+  .work-value-card:nth-child(2) {
+    border-top-color: var(--color-accent);
+  }
+
+  .work-value-card:nth-child(3) {
+    border-top-color: var(--color-ink);
+  }
+
+  .work-value-marker {
+    @apply text-xs font-semibold uppercase tracking-[0.12em];
+    color: var(--color-pop);
+  }
+
+  .work-value-card:nth-child(2) .work-value-marker {
+    color: var(--color-accent-deep);
+  }
+
+  .work-value-card:nth-child(3) .work-value-marker {
+    color: var(--color-ink);
+  }
+
+  .work-value-practice {
+    @apply rounded-lg border px-4 py-3 text-sm font-medium leading-6;
+    border-color: var(--color-border);
+    background: rgba(255, 255, 255, 0.62);
     color: var(--color-muted);
   }
 
