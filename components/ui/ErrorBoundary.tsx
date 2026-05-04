@@ -53,8 +53,8 @@ class ErrorBoundary extends React.Component<
                 Something went wrong
               </h2>
               <p className="mb-6 text-[color:var(--color-muted)]">
-                We apologize for the inconvenience. Please try refreshing the
-                page.
+                The page hit an unexpected error. Try again, or refresh if it
+                keeps happening.
               </p>
               <span className="button-primary-shell button-bubble-error">
                 <button onClick={this.resetError} className="button-primary">

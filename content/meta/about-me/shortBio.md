@@ -1,3 +1,3 @@
 ### Who am I?
 
-I'm passionate about engineering products that optimize for user experience and provide daily value in users' lives. I bring behavioral science, product management experience, and a track record leading teams with a growth mindset.
+I like building things that add positive value to the world. My background in behavioral science and product management helps me ask time saving questions before writing code, and my engineering knowledge keeps the timelines and final output valuable.

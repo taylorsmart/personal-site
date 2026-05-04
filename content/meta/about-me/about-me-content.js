@@ -180,7 +180,7 @@ const content = {
       image: '/assets/images/personal-site-image.svg',
       penLink: null,
       shortDesc:
-        'This site uses Javascript, Next.js, and tailwindcss. It required a deep understanding of both the tailwind framework & the rendering procedure for Next.js in order to construct it appropriately. ',
+        'A Next.js and Tailwind site for portfolio work and writing, built around maintainable content and clear page structure.',
     },
     {
       key: 'pj-2',
@@ -189,17 +189,18 @@ const content = {
       image: '/assets/images/next-level-backend.svg',
       penLink: null,
       shortDesc:
-        'Developing the backend for the Next-Level Ecommerce showcases my abilities with Node.js, PostgreSQL, and Express.  The frontend for this site was legacy code and we were tasked with meeting challenging user demands for speed and api efficiency.',
+        'A Node.js, PostgreSQL, and Express backend built around response-time constraints, API shape, and an inherited frontend.',
     },
-    {
-      key: 'pj-3',
-      name: 'nVision Nutrition',
-      link: 'https://github.com/Nvision-Nutrition/nvision',
-      image: '/assets/images/nvision.svg',
-      penLink: null,
-      shortDesc:
-        'This fullstack, mobile-first, application was developed using React, Next.js, and Bootstrap.  I worked with a team of developers to create an application for our clients daughter to help her better track her caloric intake in a childishly fun & appealing way.',
-    },
+
+    // {
+    //   key: 'pj-3',
+    //   name: 'nVision Nutrition',
+    //   link: 'https://github.com/Nvision-Nutrition/nvision',
+    //   image: '/assets/images/nvision.svg',
+    //   penLink: null,
+    //   shortDesc:
+    //     'A mobile-first nutrition product built with React, Next.js, and Bootstrap for a client who needed food tracking to feel lighter and easier to use.',
+    // },
   ],
 }
 

@@ -19,8 +19,8 @@ export default function FeaturedWritingSection({
             between.
           </h2>
           <p className="section-copy">
-            The writing is intentionally practical. These are the kinds of ideas
-            that help teams reason more clearly, not just ship more quickly.
+            These are short notes from my work: the decisions, patterns, and
+            small failures that I've come across worth remembering.
           </p>
         </div>
 
