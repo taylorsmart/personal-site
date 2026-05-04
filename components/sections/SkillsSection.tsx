@@ -9,7 +9,7 @@ export default function SkillsSection() {
   ]
 
   return (
-    <section className="section-shell py-12 md:py-14">
+    <section id="home-sections" className="section-shell py-12 md:py-14">
       <div className="section-header">
         <div>
           <div className="accent-rule" />

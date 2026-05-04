@@ -15,7 +15,7 @@ export default function ProjectsSection() {
   ]
 
   return (
-    <section className="section-shell py-12 md:py-14">
+    <section id="home-projects" className="section-shell py-12 md:py-14">
       <div className="section-grid section-grid-feature">
         <div className="section-intro-compact section-intro-sticky">
           <div className="accent-rule" />
